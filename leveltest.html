@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KidsBridge 영어 레벨 테스트</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('fjHw1CAd2zK2zXGWw');</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
@@ -33,6 +35,64 @@
     background: #F0F4FC;
     color: var(--text);
     min-height: 100vh;
+  }
+
+
+
+  .img-opt-btn {
+    flex: 1;
+    min-width: 110px;
+    max-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 8px 6px 10px;
+    border: 3px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .img-opt-btn:hover { border-color: var(--blue-mid); }
+  .img-opt-btn.selected { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(43,94,167,0.15); }
+  .img-opt-btn input[type=radio] { position: absolute; opacity: 0; pointer-events: none; }
+  .img-opt-btn img { width: 100%; height: 85px; object-fit: cover; border-radius: 7px; }
+  .img-opt-key { font-size: 13px; font-weight: 800; color: var(--blue); }
+  .img-options-wrap { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+
+  /* 이미지 보기 버튼 */
+  .options.img-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .option-label.img-option {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 8px 12px;
+    text-align: center;
+    gap: 8px;
+  }
+  .option-label.img-option img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .option-label.img-option.selected img {
+    border-color: var(--blue);
+  }
+  .option-label.img-option .opt-caption {
+    font-size: 12px;
+    color: var(--text-light);
+    font-weight: 600;
   }
 
   /* HEADER */
@@ -841,117 +901,6 @@
       </div>
     </div>
 
-    <!-- A1 Part 4 -->
-    <div class="part-divider">
-      <div class="part-divider-line"></div>
-      <div class="part-divider-label">A1 Movers · Part 4</div>
-      <div class="part-divider-line"></div>
-    </div>
-
-    <div class="q-card" id="lq16-card">
-      <div class="q-num">Listening · A1 · Q16</div>
-      <div class="audio-section">
-        <div class="audio-label">🔊 A1 Movers — Part 4 오디오</div>
-        <p>아래 플레이어에서 오디오를 재생하세요.<br>Q16~Q20을 먼저 읽은 후 재생하세요.</p>
-        <audio controls style="width:100%; margin-top:8px; border-radius:8px;">
-          <source src="YLE%20CEPSSU%20Movers%20R154%20-Track%204%20128kbps.mp3" type="audio/mpeg">
-          오디오를 재생할 수 없습니다.
-        </audio>
-        <div class="audio-note">※ Part 4 — 오디오를 듣고 알맞은 답을 고르세요.</div>
-      </div>
-      <div class="q-text">Which man is the girl's teacher?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-1')">
-          <input type="radio" name="L-A1-p4-1" value="A">
-          <span class="opt-key">A</span> The man with fair hair wearing a black shirt with a new beard
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-1')">
-          <input type="radio" name="L-A1-p4-1" value="B">
-          <span class="opt-key">B</span> The man with dark hair and no beard
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-1')">
-          <input type="radio" name="L-A1-p4-1" value="C">
-          <span class="opt-key">C</span> The man with glasses and a hat
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="lq17-card">
-      <div class="q-num">Listening · A1 · Q17</div>
-      <div class="q-text">What did Sally lose?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-2')">
-          <input type="radio" name="L-A1-p4-2" value="A">
-          <span class="opt-key">A</span> Her baseball cap
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-2')">
-          <input type="radio" name="L-A1-p4-2" value="B">
-          <span class="opt-key">B</span> Her blue towel
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-2')">
-          <input type="radio" name="L-A1-p4-2" value="C">
-          <span class="opt-key">C</span> Her swimsuit
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="lq18-card">
-      <div class="q-num">Listening · A1 · Q18</div>
-      <div class="q-text">What does Hugo want to eat?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-3')">
-          <input type="radio" name="L-A1-p4-3" value="A">
-          <span class="opt-key">A</span> Noodles
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-3')">
-          <input type="radio" name="L-A1-p4-3" value="B">
-          <span class="opt-key">B</span> A salad
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-3')">
-          <input type="radio" name="L-A1-p4-3" value="C">
-          <span class="opt-key">C</span> Bread and cheese
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="lq19-card">
-      <div class="q-num">Listening · A1 · Q19</div>
-      <div class="q-text">Where is Jill?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-4')">
-          <input type="radio" name="L-A1-p4-4" value="A">
-          <span class="opt-key">A</span> In the living room
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-4')">
-          <input type="radio" name="L-A1-p4-4" value="B">
-          <span class="opt-key">B</span> In the garden
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-4')">
-          <input type="radio" name="L-A1-p4-4" value="C">
-          <span class="opt-key">C</span> In the basement, cleaning her bike
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="lq20-card">
-      <div class="q-num">Listening · A1 · Q20</div>
-      <div class="q-text">What must Ben's father buy?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-5')">
-          <input type="radio" name="L-A1-p4-5" value="A">
-          <span class="opt-key">A</span> New DVDs
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-5')">
-          <input type="radio" name="L-A1-p4-5" value="B">
-          <span class="opt-key">B</span> Tennis shoes
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A1-p4-5')">
-          <input type="radio" name="L-A1-p4-5" value="C">
-          <span class="opt-key">C</span> A map
-        </label>
-      </div>
-    </div>
-
     <!-- A2 Part 4 -->
     <div class="part-divider">
       <div class="part-divider-line"></div>
@@ -971,18 +920,21 @@
         <div class="audio-note">※ Part 4 — Frank and his mum. 오디오를 듣고 알맞은 답을 고르세요.</div>
       </div>
       <div class="q-text">Which shirt does Frank want to take on holiday?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-1')">
+      <div class="img-options-wrap">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-1', 'A')">
           <input type="radio" name="L-A2-p4-1" value="A">
-          <span class="opt-key">A</span> The striped one
+          <img src="q21_A_butterfly_shirt.jpg" alt="A">
+          <span class="img-opt-key">A</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-1')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-1', 'B')">
           <input type="radio" name="L-A2-p4-1" value="B">
-          <span class="opt-key">B</span> The one with butterflies
+          <img src="q21_B_striped_shirt.jpg" alt="B">
+          <span class="img-opt-key">B</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-1')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-1', 'C')">
           <input type="radio" name="L-A2-p4-1" value="C">
-          <span class="opt-key">C</span> The black one
+          <img src="q21_C_black_shirt.jpg" alt="C">
+          <span class="img-opt-key">C</span>
         </label>
       </div>
     </div>
@@ -990,18 +942,21 @@
     <div class="q-card" id="lq22-card">
       <div class="q-num">Listening · A2 · Q22</div>
       <div class="q-text">Where are the tickets?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-2')">
+      <div class="img-options-wrap">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-2', 'A')">
           <input type="radio" name="L-A2-p4-2" value="A">
-          <span class="opt-key">A</span> On the shelf in Mum's room
+          <img src="q22_A_desk.jpg" alt="A">
+          <span class="img-opt-key">A</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-2')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-2', 'B')">
           <input type="radio" name="L-A2-p4-2" value="B">
-          <span class="opt-key">B</span> In Mum's handbag
+          <img src="q22_B_shelf.jpg" alt="B">
+          <span class="img-opt-key">B</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-2')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-2', 'C')">
           <input type="radio" name="L-A2-p4-2" value="C">
-          <span class="opt-key">C</span> On the desk, next to a book
+          <img src="q22_C_handbag.jpg" alt="C">
+          <span class="img-opt-key">C</span>
         </label>
       </div>
     </div>
@@ -1009,18 +964,34 @@
     <div class="q-card" id="lq23-card">
       <div class="q-num">Listening · A2 · Q23</div>
       <div class="q-text">What time do they have to arrive at the airport?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-3')">
+      <div class="img-options-wrap">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-3', 'A')">
           <input type="radio" name="L-A2-p4-3" value="A">
-          <span class="opt-key">A</span> 12:00
+          <img src="q23_A_clock_1015.jpg" alt="A">
+          <span class="img-opt-key">A</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-3')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-3', 'B')">
           <input type="radio" name="L-A2-p4-3" value="B">
-          <span class="opt-key">B</span> 1:15
+          <img src="q23_B_clock_1200.jpg" alt="B">
+          <span class="img-opt-key">B</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-3')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-3', 'C')">
           <input type="radio" name="L-A2-p4-3" value="C">
-          <span class="opt-key">C</span> 1:30
+          <img src="q23_C_clock_1330.jpg" alt="C">
+          <span class="img-opt-key">C</span>
+        </label>
+      </div>
+          <span class="opt-key">A</span><span class="opt-caption">12:00</span>
+        </label>
+        <label class="option-label img-option" onclick="selectOption(this, 'ans-L-A2-p4-3')">
+          <input type="radio" name="L-A2-p4-3" value="B">
+          <div style="width:100%;height:90px;display:flex;align-items:center;justify-content:center;background:#EEF4FF;border-radius:8px;font-size:28px;font-weight:900;color:var(--blue);">1:15</div>
+          <span class="opt-key">B</span><span class="opt-caption">1:15</span>
+        </label>
+        <label class="option-label img-option" onclick="selectOption(this, 'ans-L-A2-p4-3')">
+          <input type="radio" name="L-A2-p4-3" value="C">
+          <div style="width:100%;height:90px;display:flex;align-items:center;justify-content:center;background:#EEF4FF;border-radius:8px;font-size:28px;font-weight:900;color:var(--blue);">1:30</div>
+          <span class="opt-key">C</span><span class="opt-caption">1:30</span>
         </label>
       </div>
     </div>
@@ -1028,18 +999,21 @@
     <div class="q-card" id="lq24-card">
       <div class="q-num">Listening · A2 · Q24</div>
       <div class="q-text">Who is going to look after their pets?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-4')">
+      <div class="img-options-wrap">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-4', 'A')">
           <input type="radio" name="L-A2-p4-4" value="A">
-          <span class="opt-key">A</span> Mrs Hill
+          <img src="q24_A_mrs_hill.jpg" alt="A">
+          <span class="img-opt-key">A</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-4')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-4', 'B')">
           <input type="radio" name="L-A2-p4-4" value="B">
-          <span class="opt-key">B</span> Michael, Mrs Hill's son
+          <img src="q24_B_michael.jpg" alt="B">
+          <span class="img-opt-key">B</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-4')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-4', 'C')">
           <input type="radio" name="L-A2-p4-4" value="C">
-          <span class="opt-key">C</span> Grandpa
+          <img src="q24_C_grandpa.jpg" alt="C">
+          <span class="img-opt-key">C</span>
         </label>
       </div>
     </div>
@@ -1047,18 +1021,21 @@
     <div class="q-card" id="lq25-card">
       <div class="q-num">Listening · A2 · Q25</div>
       <div class="q-text">Where are they going to have lunch?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-5')">
+      <div class="img-options-wrap">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-5', 'A')">
           <input type="radio" name="L-A2-p4-5" value="A">
-          <span class="opt-key">A</span> At home before leaving
+          <img src="q25_A_airport.jpg" alt="A">
+          <span class="img-opt-key">A</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-5')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-5', 'B')">
           <input type="radio" name="L-A2-p4-5" value="B">
-          <span class="opt-key">B</span> At the airport
+          <img src="q25_B_plane.jpg" alt="B">
+          <span class="img-opt-key">B</span>
         </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-L-A2-p4-5')">
+        <label class="img-opt-btn" onclick="selectImgOption(this, 'ans-L-A2-p4-5', 'C')">
           <input type="radio" name="L-A2-p4-5" value="C">
-          <span class="opt-key">C</span> On the plane
+          <img src="q25_C_home.jpg" alt="C">
+          <span class="img-opt-key">C</span>
         </label>
       </div>
     </div>
@@ -1085,11 +1062,9 @@
       <div class="part-divider-line"></div>
     </div>
 
-    <div class="q-card" id="rq1-card">
+        <div class="q-card" id="rq1-card">
       <div class="q-num">Reading · Pre-A1 · Q1</div>
-      <div class="q-text">Look at the picture and the sentence. Is it correct? ✓ or ✗<br><br>
-      🖼️ <em>[Picture shows a mat on the floor]</em><br><br>
-      "This is a mat."</div>
+      <div class="q-text">Look at the picture and the sentence. Is it correct? ✓ or ✗<br><br><img src="r_q1_mirror.jpg" alt="a rug/mat on the floor" style="width:100%;max-width:320px;border-radius:10px;margin:8px 0 12px;display:block;" onerror="this.style.display='none'"><br>"This is a mirror."</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p1-1')">
           <input type="radio" name="R-preA1-p1-1" value="correct">
@@ -1102,9 +1077,9 @@
       </div>
     </div>
 
-    <div class="q-card" id="rq2-card">
+        <div class="q-card" id="rq2-card">
       <div class="q-num">Reading · Pre-A1 · Q2</div>
-      <div class="q-text">🖼️ <em>[Picture shows an ear]</em><br><br>"This is an ear."</div>
+      <div class="q-text"><img src="r_q2_ear.jpg" alt="an ear" style="width:100%;max-width:320px;border-radius:10px;margin:8px 0 12px;display:block;" onerror="this.style.display='none'"><br>"This is an ear."</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p1-2')">
           <input type="radio" name="R-preA1-p1-2" value="correct">
@@ -1117,9 +1092,9 @@
       </div>
     </div>
 
-    <div class="q-card" id="rq3-card">
+        <div class="q-card" id="rq3-card">
       <div class="q-num">Reading · Pre-A1 · Q3</div>
-      <div class="q-text">🖼️ <em>[Picture shows coconuts]</em><br><br>"These are coconuts."</div>
+      <div class="q-text"><img src="r_q3_potato.jpg" alt="potatoes (not coconuts)" style="width:100%;max-width:320px;border-radius:10px;margin:8px 0 12px;display:block;" onerror="this.style.display='none'"><br>"These are coconuts."</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p1-3')">
           <input type="radio" name="R-preA1-p1-3" value="correct">
@@ -1132,9 +1107,9 @@
       </div>
     </div>
 
-    <div class="q-card" id="rq4-card">
+        <div class="q-card" id="rq4-card">
       <div class="q-num">Reading · Pre-A1 · Q4</div>
-      <div class="q-text">🖼️ <em>[Picture shows a sofa]</em><br><br>"This is a sofa."</div>
+      <div class="q-text"><img src="r_q4_sofa.jpg" alt="a sofa" style="width:100%;max-width:320px;border-radius:10px;margin:8px 0 12px;display:block;" onerror="this.style.display='none'"><br>"This is a sofa."</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p1-4')">
           <input type="radio" name="R-preA1-p1-4" value="correct">
@@ -1147,9 +1122,9 @@
       </div>
     </div>
 
-    <div class="q-card" id="rq5-card">
+        <div class="q-card" id="rq5-card">
       <div class="q-num">Reading · Pre-A1 · Q5</div>
-      <div class="q-text">🖼️ <em>[Picture shows helicopters]</em><br><br>"These are helicopters."</div>
+      <div class="q-text"><img src="r_q5_helicopter.jpg" alt="helicopters" style="width:100%;max-width:320px;border-radius:10px;margin:8px 0 12px;display:block;" onerror="this.style.display='none'"><br>"These are helicopters."</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p1-5')">
           <input type="radio" name="R-preA1-p1-5" value="correct">
@@ -1176,12 +1151,12 @@
       "The children are fishing in the sea." — yes or no?</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p2-1')">
-          <input type="radio" name="R-preA1-p2-1" value="no">
-          <span class="opt-key">A</span> no
+          <input type="radio" name="R-preA1-p2-1" value="yes">
+          <span class="opt-key">A</span> yes
         </label>
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p2-1')">
-          <input type="radio" name="R-preA1-p2-1" value="yes">
-          <span class="opt-key">B</span> yes
+          <input type="radio" name="R-preA1-p2-1" value="no">
+          <span class="opt-key">B</span> no
         </label>
       </div>
     </div>
@@ -1191,12 +1166,12 @@
       <div class="q-text">"There's an old boot in the water." — yes or no?</div>
       <div class="options horizontal">
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p2-2')">
-          <input type="radio" name="R-preA1-p2-2" value="no">
-          <span class="opt-key">A</span> no
+          <input type="radio" name="R-preA1-p2-2" value="yes">
+          <span class="opt-key">A</span> yes
         </label>
         <label class="option-label" onclick="selectOption(this, 'ans-R-preA1-p2-2')">
-          <input type="radio" name="R-preA1-p2-2" value="yes">
-          <span class="opt-key">B</span> yes
+          <input type="radio" name="R-preA1-p2-2" value="no">
+          <span class="opt-key">B</span> no
         </label>
       </div>
     </div>
@@ -1549,405 +1524,6 @@
       </div>
     </div>
 
-    <!-- A1 Part 3 -->
-    <div class="part-divider">
-      <div class="part-divider-line"></div>
-      <div class="part-divider-label">A1 Movers · Part 3</div>
-      <div class="part-divider-line"></div>
-    </div>
-
-    <div class="q-card" id="rq27-card">
-      <div class="q-num">Reading · A1 · Q27–32</div>
-      <div class="passage-box">
-        <div class="passage-title">🍲 Lucy and Matt's Soup</div>
-        Lucy and Matt's mum is a doctor. The children and their dad were at home last Monday evening when Mum <strong>phoned</strong>. She said, 'I have to do some more work here at the (1)______. Ask Dad to make your dinner.' 'Oh no!' said Matt. 'Dad can't (2)______!' The family looked for some food. They found some onions, potatoes and carrots. 'I'm very (3)______!' said Matt. Then Lucy said, 'I know! We can make soup.' Matt was not happy. He said, 'I don't like soup.' 'Sorry, Matt,' Dad said. 'We only have these (4)______ to eat.' Lucy and Dad made the soup. Then the three of them sat down and started eating. 'Can I have another (5)______ of soup, please?' And they all laughed.
-      </div>
-      <div class="wb-box">📚 Word Bank: hospital / cook / hungry / vegetables / bowl / cups / cry / afraid</div>
-      <div class="q-text">Q27. (1) ______ — where Mum works</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-1')">
-          <input type="radio" name="R-A1-p3-1" value="hospital"><span class="opt-key">A</span> hospital
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-1')">
-          <input type="radio" name="R-A1-p3-1" value="school"><span class="opt-key">B</span> school
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-1')">
-          <input type="radio" name="R-A1-p3-1" value="office"><span class="opt-key">C</span> office
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq28-card">
-      <div class="q-num">Reading · A1 · Q28</div>
-      <div class="q-text">Q28. (2) ______ — what Dad can't do</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-2')">
-          <input type="radio" name="R-A1-p3-2" value="cook"><span class="opt-key">A</span> cook
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-2')">
-          <input type="radio" name="R-A1-p3-2" value="cry"><span class="opt-key">B</span> cry
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-2')">
-          <input type="radio" name="R-A1-p3-2" value="afraid"><span class="opt-key">C</span> afraid
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq29-card">
-      <div class="q-num">Reading · A1 · Q29</div>
-      <div class="q-text">Q29. (3) ______ — how Matt feels</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-3')">
-          <input type="radio" name="R-A1-p3-3" value="hungry"><span class="opt-key">A</span> hungry
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-3')">
-          <input type="radio" name="R-A1-p3-3" value="afraid"><span class="opt-key">B</span> afraid
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-3')">
-          <input type="radio" name="R-A1-p3-3" value="cups"><span class="opt-key">C</span> cups
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq30-card">
-      <div class="q-num">Reading · A1 · Q30</div>
-      <div class="q-text">Q30. (4) ______ — what they have to eat</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-4')">
-          <input type="radio" name="R-A1-p3-4" value="vegetables"><span class="opt-key">A</span> vegetables
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-4')">
-          <input type="radio" name="R-A1-p3-4" value="cups"><span class="opt-key">B</span> cups
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-4')">
-          <input type="radio" name="R-A1-p3-4" value="bowl"><span class="opt-key">C</span> bowl
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq31-card">
-      <div class="q-num">Reading · A1 · Q31</div>
-      <div class="q-text">Q31. (5) ______ — another ______ of soup</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-5')">
-          <input type="radio" name="R-A1-p3-5" value="bowl"><span class="opt-key">A</span> bowl
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-5')">
-          <input type="radio" name="R-A1-p3-5" value="cups"><span class="opt-key">B</span> cups
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-5')">
-          <input type="radio" name="R-A1-p3-5" value="cook"><span class="opt-key">C</span> cook
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq32-card">
-      <div class="q-num">Reading · A1 · Q32</div>
-      <div class="q-text">Q32. What is the best title for this story?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-6')">
-          <input type="radio" name="R-A1-p3-6" value="A"><span class="opt-key">A</span> Two children make meatballs
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-6')">
-          <input type="radio" name="R-A1-p3-6" value="B"><span class="opt-key">B</span> Matt has some nice soup
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p3-6')">
-          <input type="radio" name="R-A1-p3-6" value="C"><span class="opt-key">C</span> The family is very thirsty
-        </label>
-      </div>
-    </div>
-
-    <!-- A1 Part 4 -->
-    <div class="part-divider">
-      <div class="part-divider-line"></div>
-      <div class="part-divider-label">A1 Movers · Part 4</div>
-      <div class="part-divider-line"></div>
-    </div>
-
-    <div class="q-card" id="rq33-card">
-      <div class="q-num">Reading · A1 · Q33–37</div>
-      <div class="passage-box">
-        <div class="passage-title">🦜 Parrots</div>
-        There <strong>are</strong> 350 kinds of parrot in the world. They are clever animals. A lot of parrots are green, but you can find parrots (1)______ are red, yellow and blue. They live in trees and rocks in hot places. They have big heads and short necks. They are very good (2)______ climbing trees. (3)______ parrots do not eat meat. They eat fruit and plants. Parrots fly to many places every day to look for food. When they are (4)______, they hold their food in one foot. (5)______ birds make a lot of noise when they are with their families.
-      </div>
-      <div class="q-text">Q33. parrots (1)______ are red, yellow and blue</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-1')">
-          <input type="radio" name="R-A1-p4-1" value="what"><span class="opt-key">A</span> what
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-1')">
-          <input type="radio" name="R-A1-p4-1" value="which"><span class="opt-key">B</span> which
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-1')">
-          <input type="radio" name="R-A1-p4-1" value="where"><span class="opt-key">C</span> where
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq34-card">
-      <div class="q-num">Reading · A1 · Q34</div>
-      <div class="q-text">Q34. very good (2)______ climbing trees</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-2')">
-          <input type="radio" name="R-A1-p4-2" value="at"><span class="opt-key">A</span> at
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-2')">
-          <input type="radio" name="R-A1-p4-2" value="on"><span class="opt-key">B</span> on
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-2')">
-          <input type="radio" name="R-A1-p4-2" value="of"><span class="opt-key">C</span> of
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq35-card">
-      <div class="q-num">Reading · A1 · Q35</div>
-      <div class="q-text">Q35. (3)______ parrots do not eat meat</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-3')">
-          <input type="radio" name="R-A1-p4-3" value="Every"><span class="opt-key">A</span> Every
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-3')">
-          <input type="radio" name="R-A1-p4-3" value="Both"><span class="opt-key">B</span> Both
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-3')">
-          <input type="radio" name="R-A1-p4-3" value="Most"><span class="opt-key">C</span> Most
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq36-card">
-      <div class="q-num">Reading · A1 · Q36</div>
-      <div class="q-text">Q36. When they are (4)______, they hold their food in one foot</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-4')">
-          <input type="radio" name="R-A1-p4-4" value="eating"><span class="opt-key">A</span> eating
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-4')">
-          <input type="radio" name="R-A1-p4-4" value="ate"><span class="opt-key">B</span> ate
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-4')">
-          <input type="radio" name="R-A1-p4-4" value="eat"><span class="opt-key">C</span> eat
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq37-card">
-      <div class="q-num">Reading · A1 · Q37</div>
-      <div class="q-text">Q37. (5)______ birds make a lot of noise</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-5')">
-          <input type="radio" name="R-A1-p4-5" value="That"><span class="opt-key">A</span> That
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-5')">
-          <input type="radio" name="R-A1-p4-5" value="These"><span class="opt-key">B</span> These
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p4-5')">
-          <input type="radio" name="R-A1-p4-5" value="This"><span class="opt-key">C</span> This
-        </label>
-      </div>
-    </div>
-
-    <!-- A1 Part 6 -->
-    <div class="part-divider">
-      <div class="part-divider-line"></div>
-      <div class="part-divider-label">A1 Movers · Part 6</div>
-      <div class="part-divider-line"></div>
-    </div>
-
-    <div class="q-card" id="rq38-card">
-      <div class="q-num">Reading · A1 · Q38–47</div>
-      <div class="passage-box">
-        <div class="passage-title">🏙️ Street Scene</div>
-        <em>[A busy street picture with people, a man carrying oranges, a girl with ice cream, a woman with a baby, someone riding a motorbike, an old man with a beard, and a red car]</em>
-      </div>
-      <div class="q-text">Q38. Complete the sentence.<br>The man is carrying a ______ of oranges.</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-1')">
-          <input type="radio" name="R-A1-p6-1" value="box"><span class="opt-key">A</span> box
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-1')">
-          <input type="radio" name="R-A1-p6-1" value="bag"><span class="opt-key">B</span> bag
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-1')">
-          <input type="radio" name="R-A1-p6-1" value="basket"><span class="opt-key">C</span> basket
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq39-card">
-      <div class="q-num">Reading · A1 · Q39</div>
-      <div class="q-text">Q39. What has the girl in the yellow sweater got?</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-2')">
-          <input type="radio" name="R-A1-p6-2" value="an ice cream"><span class="opt-key">A</span> an ice cream
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-2')">
-          <input type="radio" name="R-A1-p6-2" value="a balloon"><span class="opt-key">B</span> a balloon
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-2')">
-          <input type="radio" name="R-A1-p6-2" value="a book"><span class="opt-key">C</span> a book
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq40-card">
-      <div class="q-num">Reading · A1 · Q40</div>
-      <div class="q-text">Q40. Complete the sentence.<br>The woman with the baby has ______ around her neck.</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-3')">
-          <input type="radio" name="R-A1-p6-3" value="a scarf"><span class="opt-key">A</span> a scarf
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-3')">
-          <input type="radio" name="R-A1-p6-3" value="a camera"><span class="opt-key">B</span> a camera
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-3')">
-          <input type="radio" name="R-A1-p6-3" value="headphones"><span class="opt-key">C</span> headphones
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq41-card">
-      <div class="q-num">Reading · A1 · Q41</div>
-      <div class="q-text">Q41. One person is ______ a motorbike.</div>
-      <div class="options horizontal">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-4')">
-          <input type="radio" name="R-A1-p6-4" value="riding"><span class="opt-key">A</span> riding
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-4')">
-          <input type="radio" name="R-A1-p6-4" value="fixing"><span class="opt-key">B</span> fixing
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-4')">
-          <input type="radio" name="R-A1-p6-4" value="buying"><span class="opt-key">C</span> buying
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq42-card">
-      <div class="q-num">Reading · A1 · Q42</div>
-      <div class="q-text">Q42. What is the man with the white beard doing?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-5')">
-          <input type="radio" name="R-A1-p6-5" value="A"><span class="opt-key">A</span> Sitting on a seat / feeding birds / waving
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-5')">
-          <input type="radio" name="R-A1-p6-5" value="B"><span class="opt-key">B</span> Running
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-5')">
-          <input type="radio" name="R-A1-p6-5" value="C"><span class="opt-key">C</span> Reading a newspaper
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq43-card">
-      <div class="q-num">Reading · A1 · Q43</div>
-      <div class="q-text">Q43. Who is in the red car?</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-6')">
-          <input type="radio" name="R-A1-p6-6" value="A"><span class="opt-key">A</span> A boy and a girl / some children
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-6')">
-          <input type="radio" name="R-A1-p6-6" value="B"><span class="opt-key">B</span> An old man
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A1-p6-6')">
-          <input type="radio" name="R-A1-p6-6" value="C"><span class="opt-key">C</span> A woman with a baby
-        </label>
-      </div>
-    </div>
-
-    <!-- A2 Part 2 -->
-    <div class="part-divider">
-      <div class="part-divider-line"></div>
-      <div class="part-divider-label">A2 Flyers · Part 2</div>
-      <div class="part-divider-line"></div>
-    </div>
-
-    <div class="q-card" id="rq44-card">
-      <div class="q-num">Reading · A2 · Q44–48</div>
-      <div class="passage-box">
-        <strong>Michael is talking to Sally.</strong><br><br>
-        Michael: Hello Sally. Why weren't you at school yesterday?<br>
-        Sally: <em>(Example: B — Hello Michael, I was feeling sick so I stayed in bed.)</em>
-      </div>
-      <div class="wb-box">📚 보기: A. So do I! It's horrible! &nbsp;|&nbsp; C. Did you? I just watched TV all day. &nbsp;|&nbsp; D. Yes, they have. Thank you. &nbsp;|&nbsp; E. No. I had a terrible cold but it's better now. &nbsp;|&nbsp; F. A few, I hope you'll enjoy them. &nbsp;|&nbsp; G. Would you like to play it soon? &nbsp;|&nbsp; H. This afternoon? OK! I could show you my new computer then too!</div>
-      <div class="q-text">Q44. Michael: What was the matter? Did you have a sore head?<br>Sally: ______</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-1')">
-          <input type="radio" name="R-A2-p2-1" value="E"><span class="opt-key">E</span> No. I had a terrible cold but it's better now.
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-1')">
-          <input type="radio" name="R-A2-p2-1" value="A"><span class="opt-key">A</span> So do I! It's horrible!
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-1')">
-          <input type="radio" name="R-A2-p2-1" value="G"><span class="opt-key">G</span> Would you like to play it soon?
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq45-card">
-      <div class="q-num">Reading · A2 · Q45</div>
-      <div class="q-text">Q45. Michael: I hate being ill.<br>Sally: ______</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-2')">
-          <input type="radio" name="R-A2-p2-2" value="A"><span class="opt-key">A</span> So do I! It's horrible!
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-2')">
-          <input type="radio" name="R-A2-p2-2" value="D"><span class="opt-key">D</span> Yes, they have. Thank you very much.
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-2')">
-          <input type="radio" name="R-A2-p2-2" value="H"><span class="opt-key">H</span> This afternoon? OK! I could show you my new computer then too!
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq46-card">
-      <div class="q-num">Reading · A2 · Q46</div>
-      <div class="q-text">Q46. Michael: In our English lesson, we had to answer some questions about a story.<br>Sally: ______</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-3')">
-          <input type="radio" name="R-A2-p2-3" value="C"><span class="opt-key">C</span> Did you? I just watched TV all day.
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-3')">
-          <input type="radio" name="R-A2-p2-3" value="F"><span class="opt-key">F</span> A few, I hope you'll enjoy them.
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-3')">
-          <input type="radio" name="R-A2-p2-3" value="E"><span class="opt-key">E</span> No. I had a terrible cold.
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq47-card">
-      <div class="q-num">Reading · A2 · Q47</div>
-      <div class="q-text">Q47. Michael: I can come to your house after school if you like.<br>Sally: ______</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-4')">
-          <input type="radio" name="R-A2-p2-4" value="H"><span class="opt-key">H</span> This afternoon? OK! I could show you my new computer then too!
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-4')">
-          <input type="radio" name="R-A2-p2-4" value="G"><span class="opt-key">G</span> Would you like to play it soon?
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-4')">
-          <input type="radio" name="R-A2-p2-4" value="A"><span class="opt-key">A</span> So do I! It's horrible!
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card" id="rq48-card">
-      <div class="q-num">Reading · A2 · Q48</div>
-      <div class="q-text">Q48. Michael: Have you got any games that we can play?<br>Sally: ______</div>
-      <div class="options">
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-5')">
-          <input type="radio" name="R-A2-p2-5" value="F"><span class="opt-key">F</span> A few, I hope you'll enjoy them.
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-5')">
-          <input type="radio" name="R-A2-p2-5" value="C"><span class="opt-key">C</span> Did you? I just watched TV all day.
-        </label>
-        <label class="option-label" onclick="selectOption(this, 'ans-R-A2-p2-5')">
-          <input type="radio" name="R-A2-p2-5" value="D"><span class="opt-key">D</span> Yes, they have. Thank you very much.
-        </label>
-      </div>
-    </div>
-
     <!-- A2 Part 3 -->
     <div class="part-divider">
       <div class="part-divider-line"></div>
@@ -2056,6 +1632,38 @@
       </div>
     </div>
 
+
+    <!-- Bonus: 자기소개 & 태도 문항 -->
+    <div class="part-divider">
+      <div class="part-divider-line"></div>
+      <div class="part-divider-label">✏️ About Me (영어로 써보기)</div>
+      <div class="part-divider-line"></div>
+    </div>
+
+    <div class="q-card" id="bonus1-card">
+      <div class="q-num">Q1. 자기소개</div>
+      <div class="q-text" style="margin-bottom:8px;">🙋 <strong>Introduce yourself in English!</strong><br>
+      <span style="font-size:13px;color:var(--text-light);">영어로 자신을 소개해 보세요. (이름, 나이, 좋아하는 것 등)</span></div>
+      <div style="font-size:12px;color:var(--text-light);margin-bottom:6px;">💡 Hint: My name is ___, I am ___ years old, I like ___.</div>
+      <textarea id="bonus-ans-1" rows="3" placeholder="Write your answer here..." style="width:100%;padding:12px;border:2px solid var(--border);border-radius:10px;font-family:inherit;font-size:14px;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+    </div>
+
+    <div class="q-card" id="bonus2-card">
+      <div class="q-num">Q2. 캠프 참가 이유</div>
+      <div class="q-text" style="margin-bottom:8px;">🌟 <strong>Why do you want to join this English camp?</strong><br>
+      <span style="font-size:13px;color:var(--text-light);">이 영어 캠프에 참가하고 싶은 이유를 영어로 써보세요.</span></div>
+      <div style="font-size:12px;color:var(--text-light);margin-bottom:6px;">💡 Hint: I want to join because ___, I hope to ___.</div>
+      <textarea id="bonus-ans-2" rows="3" placeholder="Write your answer here..." style="width:100%;padding:12px;border:2px solid var(--border);border-radius:10px;font-family:inherit;font-size:14px;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+    </div>
+
+    <div class="q-card" id="bonus3-card">
+      <div class="q-num">Q3. 좋아하는 활동</div>
+      <div class="q-text" style="margin-bottom:8px;">🎨 <strong>What do you like to do in your free time?</strong><br>
+      <span style="font-size:13px;color:var(--text-light);">영어로 좋아하는 활동이나 취미를 소개해 보세요.</span></div>
+      <div style="font-size:12px;color:var(--text-light);margin-bottom:6px;">💡 Hint: In my free time, I like to ___ because ___.</div>
+      <textarea id="bonus-ans-3" rows="3" placeholder="Write your answer here..." style="width:100%;padding:12px;border:2px solid var(--border);border-radius:10px;font-family:inherit;font-size:14px;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+    </div>
+
     <div class="section-nav">
       <button class="btn-nav btn-prev" onclick="goTo('screen-listening')">← 리스닝으로</button>
       <button class="btn-submit" onclick="submitTest()">제출하기 ✓</button>
@@ -2068,7 +1676,7 @@
       <div class="result-name" id="resultName"></div>
       <div class="result-title">테스트 완료!</div>
 
-      <div class="score-grid">
+      <div class="score-grid" style="display:none;">
         <div class="score-box">
           <div class="s-label">Pre-A1 점수</div>
           <div class="s-val" id="scorePreA1">-</div>
@@ -2077,25 +1685,25 @@
         <div class="score-box">
           <div class="s-label">A1 점수</div>
           <div class="s-val" id="scoreA1">-</div>
-          <div class="s-total">/ 41점</div>
+          <div class="s-total">/ 26점</div>
         </div>
         <div class="score-box">
           <div class="s-label">A2 점수</div>
           <div class="s-val" id="scoreA2">-</div>
-          <div class="s-total">/ 16점</div>
+          <div class="s-total">/ 11점</div>
         </div>
       </div>
 
-      <div class="score-grid" style="grid-template-columns:1fr 1fr; margin-bottom:24px;">
+      <div class="score-grid" style="grid-template-columns:1fr 1fr; margin-bottom:24px; display:none;">
         <div class="score-box">
           <div class="s-label">리스닝</div>
           <div class="s-val" id="scoreListening">-</div>
-          <div class="s-total">/ 25점</div>
+          <div class="s-total">/ 20점</div>
         </div>
         <div class="score-box">
           <div class="s-label">리딩</div>
           <div class="s-val" id="scoreReading">-</div>
-          <div class="s-total">/ 47점</div>
+          <div class="s-total">/ 32점</div>
         </div>
       </div>
 
@@ -2110,6 +1718,12 @@
         <ul class="can-do-list" id="canDoList"></ul>
       </div>
 
+      <div style="text-align:center;margin:24px 0 8px;">
+        <button id="sendEmailBtn" onclick="sendResultEmail()" style="background:var(--blue);color:#fff;border:none;padding:16px 40px;border-radius:14px;font-size:17px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(43,94,167,0.25);transition:transform 0.15s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+          📧 결과 제출하기
+        </button>
+        <div id="emailSentMsg" style="display:none;margin-top:12px;color:var(--green);font-weight:700;font-size:14px;">✅ 이메일 앱이 열렸습니다. 전송 버튼을 눌러 제출을 완료해 주세요!</div>
+      </div>
       <div class="note-box">
         ※ 이 결과는 참고용 점수이며, 실제 반 배정은 모집 인원 확정 후 운영진이 별도로 안내드립니다.<br>
         ※ 본 테스트는 Cambridge YLE 샘플 문항(© 2024 Cambridge University Press & Assessment)을 기반으로 제작되었습니다.
@@ -2144,22 +1758,16 @@ const ANSWER_KEY = {
   'ans-L-A1-p2-3': 'dress',
   'ans-L-A1-p2-4': 'friends',
   'ans-L-A1-p2-5': 'women',
-  // Listening A1 Part 4
-  'ans-L-A1-p4-1': 'A',
-  'ans-L-A1-p4-2': 'B',
-  'ans-L-A1-p4-3': 'B',
-  'ans-L-A1-p4-4': 'C',
-  'ans-L-A1-p4-5': 'C',
   // Listening A2 Part 4
-  'ans-L-A2-p4-1': 'C',
-  'ans-L-A2-p4-2': 'C',
+  'ans-L-A2-p4-1': 'B',
+  'ans-L-A2-p4-2': 'A',
   'ans-L-A2-p4-3': 'C',
   'ans-L-A2-p4-4': 'B',
-  'ans-L-A2-p4-5': 'C',
+  'ans-L-A2-p4-5': 'B',
   // Reading Pre-A1 Part 1
-  'ans-R-preA1-p1-1': 'correct',
+  'ans-R-preA1-p1-1': 'wrong',
   'ans-R-preA1-p1-2': 'correct',
-  'ans-R-preA1-p1-3': 'correct',
+  'ans-R-preA1-p1-3': 'wrong',
   'ans-R-preA1-p1-4': 'correct',
   'ans-R-preA1-p1-5': 'correct',
   // Reading Pre-A1 Part 2
@@ -2187,32 +1795,6 @@ const ANSWER_KEY = {
   'ans-R-A1-p2-4': 'B',
   'ans-R-A1-p2-5': 'C',
   'ans-R-A1-p2-6': 'B',
-  // Reading A1 Part 3
-  'ans-R-A1-p3-1': 'hospital',
-  'ans-R-A1-p3-2': 'cook',
-  'ans-R-A1-p3-3': 'hungry',
-  'ans-R-A1-p3-4': 'vegetables',
-  'ans-R-A1-p3-5': 'bowl',
-  'ans-R-A1-p3-6': 'B',
-  // Reading A1 Part 4
-  'ans-R-A1-p4-1': 'which',
-  'ans-R-A1-p4-2': 'at',
-  'ans-R-A1-p4-3': 'Most',
-  'ans-R-A1-p4-4': 'eating',
-  'ans-R-A1-p4-5': 'These',
-  // Reading A1 Part 6
-  'ans-R-A1-p6-1': 'box',
-  'ans-R-A1-p6-2': 'an ice cream',
-  'ans-R-A1-p6-3': 'a scarf',
-  'ans-R-A1-p6-4': 'riding',
-  'ans-R-A1-p6-5': 'A',
-  'ans-R-A1-p6-6': 'A',
-  // Reading A2 Part 2
-  'ans-R-A2-p2-1': 'E',
-  'ans-R-A2-p2-2': 'A',
-  'ans-R-A2-p2-3': 'C',
-  'ans-R-A2-p2-4': 'H',
-  'ans-R-A2-p2-5': 'F',
   // Reading A2 Part 3
   'ans-R-A2-p3-1': 'felt',
   'ans-R-A2-p3-2': 'key',
@@ -2228,15 +1810,11 @@ const LEVEL_MAP = {
           'ans-R-preA1-p2-1','ans-R-preA1-p2-2','ans-R-preA1-p2-3','ans-R-preA1-p2-4','ans-R-preA1-p2-5'],
   A1: ['ans-L-A1-p1-1','ans-L-A1-p1-2','ans-L-A1-p1-3','ans-L-A1-p1-4','ans-L-A1-p1-5',
        'ans-L-A1-p2-1','ans-L-A1-p2-2','ans-L-A1-p2-3','ans-L-A1-p2-4','ans-L-A1-p2-5',
-       'ans-L-A1-p4-1','ans-L-A1-p4-2','ans-L-A1-p4-3','ans-L-A1-p4-4','ans-L-A1-p4-5',
        'ans-R-preA1-p4-1','ans-R-preA1-p4-2','ans-R-preA1-p4-3','ans-R-preA1-p4-4','ans-R-preA1-p4-5',
        'ans-R-A1-p1-1','ans-R-A1-p1-2','ans-R-A1-p1-3','ans-R-A1-p1-4','ans-R-A1-p1-5',
        'ans-R-A1-p2-1','ans-R-A1-p2-2','ans-R-A1-p2-3','ans-R-A1-p2-4','ans-R-A1-p2-5','ans-R-A1-p2-6',
-       'ans-R-A1-p3-1','ans-R-A1-p3-2','ans-R-A1-p3-3','ans-R-A1-p3-4','ans-R-A1-p3-5','ans-R-A1-p3-6',
-       'ans-R-A1-p4-1','ans-R-A1-p4-2','ans-R-A1-p4-3','ans-R-A1-p4-4','ans-R-A1-p4-5',
-       'ans-R-A1-p6-1','ans-R-A1-p6-2','ans-R-A1-p6-3','ans-R-A1-p6-4','ans-R-A1-p6-5','ans-R-A1-p6-6'],
+],
   A2: ['ans-L-A2-p4-1','ans-L-A2-p4-2','ans-L-A2-p4-3','ans-L-A2-p4-4','ans-L-A2-p4-5',
-       'ans-R-A2-p2-1','ans-R-A2-p2-2','ans-R-A2-p2-3','ans-R-A2-p2-4','ans-R-A2-p2-5',
        'ans-R-A2-p3-1','ans-R-A2-p3-2','ans-R-A2-p3-3','ans-R-A2-p3-4','ans-R-A2-p3-5','ans-R-A2-p3-6'],
 };
 
@@ -2272,6 +1850,16 @@ function startTimer() {
     const s = (elapsed % 60).toString().padStart(2, '0');
     document.getElementById('timerDisplay').textContent = m + ':' + s;
   }, 1000);
+}
+
+function selectImgOption(label, ansId, val) {
+  const wrap = label.closest('.img-options-wrap');
+  wrap.querySelectorAll('.img-opt-btn').forEach(l => l.classList.remove('selected'));
+  label.classList.add('selected');
+  label.querySelector('input').checked = true;
+  answers[ansId] = val;
+  const card = label.closest('.q-card');
+  if (card) card.classList.add('answered');
 }
 
 function selectOption(label, ansId) {
@@ -2328,8 +1916,8 @@ function submitTest() {
 
   // Grade logic
   const preA1Pct = scores.preA1 / 15;
-  const A1Pct = scores.A1 / 41;
-  const A2Pct = scores.A2 / 16;
+  const A1Pct = scores.A1 / 26;
+  const A2Pct = scores.A2 / 11;
 
   let shields, gradeDesc, canDos;
 
@@ -2367,6 +1955,133 @@ function submitTest() {
   });
 
   goTo('screen-result');
+}
+
+function buildAnswerLog() {
+  const ANSWER_KEY_LOCAL = {
+    'ans-L-preA1-p2-1': '12', 'ans-L-preA1-p2-2': 'DUCK', 'ans-L-preA1-p2-3': 'Shell',
+    'ans-L-preA1-p2-4': '20', 'ans-L-preA1-p2-5': 'Lorry',
+    'ans-L-A1-p1-1': 'Fred', 'ans-L-A1-p1-2': 'Vicky', 'ans-L-A1-p1-3': 'Jane',
+    'ans-L-A1-p1-4': 'Mark', 'ans-L-A1-p1-5': 'Daisy',
+    'ans-L-A1-p2-1': 'floor', 'ans-L-A1-p2-2': '4', 'ans-L-A1-p2-3': 'dress',
+    'ans-L-A1-p2-4': 'friends', 'ans-L-A1-p2-5': 'women',
+    'ans-L-A2-p4-1': 'B', 'ans-L-A2-p4-2': 'A', 'ans-L-A2-p4-3': 'C',
+    'ans-L-A2-p4-4': 'B', 'ans-L-A2-p4-5': 'B',
+    'ans-R-preA1-p1-1': 'wrong', 'ans-R-preA1-p1-2': 'correct', 'ans-R-preA1-p1-3': 'wrong',
+    'ans-R-preA1-p1-4': 'correct', 'ans-R-preA1-p1-5': 'correct',
+    'ans-R-preA1-p2-1': 'no', 'ans-R-preA1-p2-2': 'no', 'ans-R-preA1-p2-3': 'yes',
+    'ans-R-preA1-p2-4': 'yes', 'ans-R-preA1-p2-5': 'yes',
+    'ans-R-preA1-p4-1': 'eyes', 'ans-R-preA1-p4-2': 'tail', 'ans-R-preA1-p4-3': 'people',
+    'ans-R-preA1-p4-4': 'day', 'ans-R-preA1-p4-5': 'food',
+    'ans-R-A1-p1-1': 'a balcony', 'ans-R-A1-p1-2': 'a panda', 'ans-R-A1-p1-3': 'a helmet',
+    'ans-R-A1-p1-4': 'stairs', 'ans-R-A1-p1-5': 'a dolphin',
+    'ans-R-A1-p2-1': 'C', 'ans-R-A1-p2-2': 'C', 'ans-R-A1-p2-3': 'A',
+    'ans-R-A1-p2-4': 'B', 'ans-R-A1-p2-5': 'C', 'ans-R-A1-p2-6': 'B',
+    'ans-R-A2-p3-1': 'felt', 'ans-R-A2-p3-2': 'key', 'ans-R-A2-p3-3': 'nicer',
+    'ans-R-A2-p3-4': 'bridge', 'ans-R-A2-p3-5': 'sure', 'ans-R-A2-p3-6': 'C',
+  };
+
+  const labels = {
+    'ans-L-preA1-p2-1': 'L-PreA1 Q1', 'ans-L-preA1-p2-2': 'L-PreA1 Q2',
+    'ans-L-preA1-p2-3': 'L-PreA1 Q3', 'ans-L-preA1-p2-4': 'L-PreA1 Q4',
+    'ans-L-preA1-p2-5': 'L-PreA1 Q5',
+    'ans-L-A1-p1-1': 'L-A1 Q6', 'ans-L-A1-p1-2': 'L-A1 Q7', 'ans-L-A1-p1-3': 'L-A1 Q8',
+    'ans-L-A1-p1-4': 'L-A1 Q9', 'ans-L-A1-p1-5': 'L-A1 Q10',
+    'ans-L-A1-p2-1': 'L-A1 Q11', 'ans-L-A1-p2-2': 'L-A1 Q12', 'ans-L-A1-p2-3': 'L-A1 Q13',
+    'ans-L-A1-p2-4': 'L-A1 Q14', 'ans-L-A1-p2-5': 'L-A1 Q15',
+    'ans-L-A2-p4-1': 'L-A2 Q16', 'ans-L-A2-p4-2': 'L-A2 Q17', 'ans-L-A2-p4-3': 'L-A2 Q18',
+    'ans-L-A2-p4-4': 'L-A2 Q19', 'ans-L-A2-p4-5': 'L-A2 Q20',
+    'ans-R-preA1-p1-1': 'R-PreA1 Q1', 'ans-R-preA1-p1-2': 'R-PreA1 Q2',
+    'ans-R-preA1-p1-3': 'R-PreA1 Q3', 'ans-R-preA1-p1-4': 'R-PreA1 Q4',
+    'ans-R-preA1-p1-5': 'R-PreA1 Q5',
+    'ans-R-preA1-p2-1': 'R-PreA1 Q6', 'ans-R-preA1-p2-2': 'R-PreA1 Q7',
+    'ans-R-preA1-p2-3': 'R-PreA1 Q8', 'ans-R-preA1-p2-4': 'R-PreA1 Q9',
+    'ans-R-preA1-p2-5': 'R-PreA1 Q10',
+    'ans-R-preA1-p4-1': 'R-PreA1 Q11', 'ans-R-preA1-p4-2': 'R-PreA1 Q12',
+    'ans-R-preA1-p4-3': 'R-PreA1 Q13', 'ans-R-preA1-p4-4': 'R-PreA1 Q14',
+    'ans-R-preA1-p4-5': 'R-PreA1 Q15',
+    'ans-R-A1-p1-1': 'R-A1 Q16', 'ans-R-A1-p1-2': 'R-A1 Q17', 'ans-R-A1-p1-3': 'R-A1 Q18',
+    'ans-R-A1-p1-4': 'R-A1 Q19', 'ans-R-A1-p1-5': 'R-A1 Q20',
+    'ans-R-A1-p2-1': 'R-A1 Q21', 'ans-R-A1-p2-2': 'R-A1 Q22', 'ans-R-A1-p2-3': 'R-A1 Q23',
+    'ans-R-A1-p2-4': 'R-A1 Q24', 'ans-R-A1-p2-5': 'R-A1 Q25', 'ans-R-A1-p2-6': 'R-A1 Q26',
+    'ans-R-A2-p3-1': 'R-A2 Q27', 'ans-R-A2-p3-2': 'R-A2 Q28', 'ans-R-A2-p3-3': 'R-A2 Q29',
+    'ans-R-A2-p3-4': 'R-A2 Q30', 'ans-R-A2-p3-5': 'R-A2 Q31', 'ans-R-A2-p3-6': 'R-A2 Q32',
+  };
+
+  let listeningLog = '[리스닝]\n';
+  let readingLog = '\n[리딩]\n';
+
+  for (const [key, correct] of Object.entries(ANSWER_KEY_LOCAL)) {
+    const userAns = (answers[key] || '(미응답)');
+    const isCorrect = userAns.trim().toLowerCase() === correct.trim().toLowerCase();
+    const mark = isCorrect ? '✅' : '❌';
+    const label = labels[key] || key;
+    const line = `${label}: ${userAns} ${mark} (정답: ${correct})\n`;
+    if (key.startsWith('ans-L')) listeningLog += line;
+    else readingLog += line;
+  }
+  return listeningLog + readingLog;
+}
+
+function buildGradeReason(scores) {
+  const preA1Pct = scores.preA1 / 15;
+  const A1Pct = scores.A1 / 26;
+  const A2Pct = scores.A2 / 11;
+  const pct = v => Math.round(v * 100);
+  return `Pre-A1 정답률: ${scores.preA1}/15 (${pct(preA1Pct)}%) → ${preA1Pct >= 0.5 ? '통과 ✅' : '미달 ❌'}
+A1  정답률: ${scores.A1}/26 (${pct(A1Pct)}%) → ${A1Pct >= 0.5 ? '통과 ✅' : '미달 ❌'}
+A2  정답률: ${scores.A2}/11 (${pct(A2Pct)}%) → ${A2Pct >= 0.75 ? '상위권 ✅' : A2Pct >= 0.5 ? '통과 ✅' : '미달 ❌'}`;
+}
+
+async function sendResultEmail() {
+  const btn = document.getElementById('sendEmailBtn');
+  const msg = document.getElementById('emailSentMsg');
+  btn.disabled = true;
+  btn.textContent = '전송 중...';
+
+  const name = document.getElementById('studentName').value || '미입력';
+  const scores = scoreAnswers();
+  const shields = document.getElementById('resultShields').textContent;
+  const grade = document.getElementById('gradeDesc').textContent;
+  const elapsed = document.getElementById('timerDisplay').textContent;
+  const b1 = (document.getElementById('bonus-ans-1') || {}).value || '(미작성)';
+  const b2 = (document.getElementById('bonus-ans-2') || {}).value || '(미작성)';
+  const b3 = (document.getElementById('bonus-ans-3') || {}).value || '(미작성)';
+  const now = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+  const gradeReason = buildGradeReason(scores);
+  const allAnswers = buildAnswerLog();
+
+  const templateParams = {
+    student_name: name,
+    test_date: now,
+    elapsed_time: elapsed,
+    grade_shields: shields,
+    grade_desc: grade,
+    grade_reason: gradeReason,
+    score_preA1: `${scores.preA1} / 15`,
+    score_A1: `${scores.A1} / 26`,
+    score_A2: `${scores.A2} / 11`,
+    score_listening: `${scores.listening} / 20`,
+    score_reading: `${scores.reading} / 32`,
+    bonus1: b1,
+    bonus2: b2,
+    bonus3: b3,
+    all_answers: allAnswers,
+  };
+
+  try {
+    await emailjs.send('kidsbridge_LT', 'template_b4ubj2q', templateParams);
+    msg.style.display = 'block';
+    msg.style.color = 'var(--green)';
+    msg.textContent = '✅ 결과가 KidsBridge로 전송되었습니다!';
+    btn.textContent = '📧 전송 완료';
+  } catch (err) {
+    msg.style.display = 'block';
+    msg.style.color = 'var(--red)';
+    msg.textContent = '❌ 전송 실패: ' + (err.text || err.message || JSON.stringify(err));
+    btn.disabled = false;
+    btn.textContent = '📧 다시 시도하기';
+  }
 }
 </script>
 </body>
