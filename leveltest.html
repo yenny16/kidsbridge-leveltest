@@ -1905,7 +1905,11 @@ function scoreAnswers() {
   for (const key of Object.keys(ANSWER_KEY)) {
     const userAns = (answers[key] || '').trim().toLowerCase();
     const correct = ANSWER_KEY[key].trim().toLowerCase();
-    const isCorrect = userAns === correct;
+    // 숫자-단어 양방향 허용
+    const numWordMap = {'12':'twelve','twenty':'20','twelve':'12','20':'twenty'};
+    const isCorrect = userAns === correct || 
+      (numWordMap[userAns] && numWordMap[userAns] === correct) ||
+      (numWordMap[correct] && numWordMap[correct] === userAns);
 
     if (isCorrect) {
       if (LEVEL_MAP.preA1.includes(key)) preA1++;
